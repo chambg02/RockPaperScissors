@@ -1,5 +1,3 @@
-
-
 // Function to make the computer pick Rock, Paper or Scissors randomly:
 function computerPlay() {
     randomNumber = Math.floor(Math.random()*3+1);
@@ -62,12 +60,34 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         result = 'Scissors beat paper. You Win!'
     }
-
     return result;
 }
 
+function game(round) {
+    let playerScore = 0;
+    let computerScore = 0;
 
+    for (let i = 0; i < 5; i++) {
+        round = playRound();
+        console.log(round);
 
+        if (round == 'Draw!') {
+            playerScore;
+            computerScore;
+        } else if (round == 'Paper beats rock. You Lose!' || round == 'Scissors beat paper. You Lose!' || round == 'Rock beats scissors. You Lose!') {
+            computerScore++;
+        } else if (round == 'Rock beats scissors. You Win!' || round == 'Paper beats rock. You Win!' || round == 'Scissors beat paper. You Win!') {
+            playerScore++;
+        }
+        console.log("Player: " + playerScore + " - Computer: " + computerScore);
+    }
+
+    if (playerScore > computerScore) {
+        console.log('PLAYER WINS BEST OF 5');
+    } else {
+        console.log('COMPUTER WINS BEST OF 5');
+    }
+}
 
 
 
