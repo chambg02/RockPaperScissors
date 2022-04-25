@@ -23,7 +23,7 @@ function playerPlay() {
     return playerChoice;
 }
 
-// Function to prompt user input, make computer generate pick then determine a winner:
+// Function to play game for 1 round and determine winner of the round:
 function playRound(playerSelection, computerSelection) {
     let result = '';
     computerSelection = computerPlay();
@@ -63,6 +63,7 @@ function playRound(playerSelection, computerSelection) {
     return result;
 }
 
+// Function to play the game for 5 rounds and keep a tally of the score. After 5 rounds, announces a winner.
 function game(round) {
     let playerScore = 0;
     let computerScore = 0;
